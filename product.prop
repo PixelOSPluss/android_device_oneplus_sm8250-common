@@ -1,3 +1,6 @@
+# HWUI
+debug.hwui.skia_atrace_enabled=false
+
 # Audio
 af.fast_track_multiplier=1
 
