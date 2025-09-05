@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     tri-state-key-calibrate
 
 # ART
+PRODUCT_ENABLE_UFFD_GC := true
 ART_BUILD_TARGET_NDEBUG := true
 ART_BUILD_TARGET_DEBUG := false
 ART_BUILD_HOST_NDEBUG := true
