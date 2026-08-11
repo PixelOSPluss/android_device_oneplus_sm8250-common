@@ -121,10 +121,12 @@
       "Name": "GPUIdleTimer",
       "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
       "Values": [
+        "5000",
+        "2000",
         "80",
         "64"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {
@@ -264,19 +266,19 @@
       "PowerHint": "INTERACTION",
       "Node": "GPUIdleTimer",
       "Duration": 90,
-      "Value": "64"
+      "Value": "2000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUMinFreq",
+      "Duration": 90,
+      "Value": "3"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "L3ClusterMinFreq",
       "Duration": 90,
       "Value": "9999999"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "SchedutilDownRateLimit",
-      "Duration": 90,
-      "Value": "10000"
     },
     {
       "PowerHint": "INTERACTION",
