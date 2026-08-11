@@ -304,8 +304,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/oplus \
-    hardware/qcom-caf/common/libqti-perfd-client
+    hardware/oplus
 
 # Telephony
 PRODUCT_PACKAGES += \
