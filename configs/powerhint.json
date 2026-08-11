@@ -20,12 +20,14 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
+        "0",
         "1420800",
         "1171200",
         "1075200",
         "691200",
         "300000"
       ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -49,6 +51,7 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
+        "0",
         "2150400",
         "1958400",
         "1766400",
@@ -56,6 +59,7 @@
         "1286400",
         "710400"
       ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -78,6 +82,7 @@
       "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
+        "0",
         "2841600",
         "2649600",
         "1862400",
@@ -85,6 +90,7 @@
         "1190400",
         "844800"
       ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
