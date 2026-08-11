@@ -636,13 +636,13 @@
       "PowerHint": "VIDEO_PLAYBACK",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "1766400"
+      "Value": "1286400"
     },
     {
       "PowerHint": "VIDEO_PLAYBACK",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
-      "Value": "1862400"
+      "Value": "1305600"
     },
     {
       "PowerHint": "VIDEO_PLAYBACK",
