@@ -5748,19 +5748,21 @@ case "$target" in
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
+	echo 1209600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
+	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
-	# Touch input boost for 120Hz smooth UI response (40ms duration)
-	echo "0:1171200" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
-	echo 40 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+	# Touch input boost for 120Hz smooth UI response (120ms duration on Little cores only)
+	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq 2>/dev/null
+	echo "0:1324800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq 2>/dev/null
+	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms 2>/dev/null
+	echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms 2>/dev/null
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
+	echo 1574400 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
+	echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 	# configure governor settings for gold+ cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
