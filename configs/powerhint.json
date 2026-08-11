@@ -170,6 +170,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "F2fsRecessModeEnable",
+      "Path": "/dev/sys/fs/by-name/userdata/gc_urgent",
+      "Values": [
+        "2",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUCtagBackgroundUclampMax",
       "Path": "/dev/cpuctl/background/cpu.uclamp.max",
       "Values": [
@@ -607,6 +616,12 @@
       "Node": "L3ClusterMinFreq",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "F2fsRecessModeEnable",
+      "Duration": 0,
+      "Value": "2"
     },
     {
       "PowerHint": "DISPLAY_PRI_0_IDLE",
