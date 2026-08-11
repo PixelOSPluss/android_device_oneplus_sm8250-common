@@ -633,6 +633,36 @@
       "Value": "0"
     },
     {
+      "PowerHint": "VIDEO_PLAYBACK",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1766400"
+    },
+    {
+      "PowerHint": "VIDEO_PLAYBACK",
+      "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1862400"
+    },
+    {
+      "PowerHint": "VIDEO_PLAYBACK",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "VIDEO_PLAYBACK",
+      "Node": "TAUClampBoost",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "VIDEO_PLAYBACK",
+      "Node": "CPUCtagBackgroundUclampMax",
+      "Duration": 0,
+      "Value": "30"
+    },
+    {
       "PowerHint": "DOUBLE_TAP_TO_WAKE",
       "Node": "DoubleTapToWakeEnable",
       "Duration": 0,
