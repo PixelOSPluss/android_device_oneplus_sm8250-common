@@ -443,6 +443,30 @@
       "Value": "30"
     },
     {
+      "PowerHint": "FP_BOOST",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 500,
+      "Value": "1958400"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 500,
+      "Value": "1420800"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 500,
+      "Value": "44"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "TAUClampBoost",
+      "Duration": 500,
+      "Value": "40"
+    },
+    {
       "PowerHint": "DOUBLE_TAP_TO_WAKE",
       "Node": "DoubleTapToWakeEnable",
       "Duration": 0,
