@@ -441,6 +441,12 @@
       "Value": "1"
     },
     {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "TAUClampBoost",
+      "Duration": 0,
+      "Value": "20"
+    },
+    {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
