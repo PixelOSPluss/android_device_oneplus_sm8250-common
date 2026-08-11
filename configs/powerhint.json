@@ -221,37 +221,37 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "TAUClampBoost",
-      "Duration": 120,
+      "Duration": 90,
       "Value": "20"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 120,
+      "Duration": 90,
       "Value": "1286400"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 120,
+      "Duration": 90,
       "Value": "1075200"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "GPUIdleTimer",
-      "Duration": 120,
+      "Duration": 90,
       "Value": "64"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "L3ClusterMinFreq",
-      "Duration": 120,
+      "Duration": 90,
       "Value": "9999999"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "SchedutilDownRateLimit",
-      "Duration": 120,
+      "Duration": 90,
       "Value": "10000"
     },
     {
