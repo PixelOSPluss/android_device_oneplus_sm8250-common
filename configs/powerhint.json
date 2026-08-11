@@ -341,8 +341,20 @@
     {
       "PowerHint": "CAMERA_SHOT",
       "Node": "PMQoSCpuDmaLatency",
-      "Duration": 1000,
+      "Duration": 1500,
       "Value": "44"
+    },
+    {
+      "PowerHint": "CAMERA_SHOT",
+      "Node": "DDRBWMinFreq",
+      "Duration": 1500,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "CAMERA_SHOT",
+      "Node": "TAUClampBoost",
+      "Duration": 1500,
+      "Value": "40"
     },
     {
       "PowerHint": "AUDIO_LAUNCH",
