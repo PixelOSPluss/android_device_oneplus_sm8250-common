@@ -112,6 +112,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "GPUIdleTimer",
+      "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
+      "Values": [
+        "80",
+        "64"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "PMQoSCpuDmaLatency",
       "Path": "/dev/cpu_dma_latency",
       "Values": [
@@ -127,6 +137,16 @@
         "1",
         "20",
         "40"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUCtagBackgroundUclampMax",
+      "Path": "/dev/cpuctl/background/cpu.uclamp.max",
+      "Values": [
+        "max",
+        "30"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -187,6 +207,12 @@
       "Node": "CPULittleClusterMinFreq",
       "Duration": 120,
       "Value": "1075200"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUIdleTimer",
+      "Duration": 120,
+      "Value": "64"
     },
     {
       "PowerHint": "LAUNCH",
@@ -409,6 +435,12 @@
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 3600000,
       "Value": "1305600"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUCtagBackgroundUclampMax",
+      "Duration": 3600000,
+      "Value": "30"
     },
     {
       "PowerHint": "DOUBLE_TAP_TO_WAKE",
