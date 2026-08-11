@@ -525,6 +525,12 @@
       "Value": "30"
     },
     {
+      "PowerHint": "LOW_POWER",
+      "Node": "GPUMaxFreq",
+      "Duration": 3600000,
+      "Value": "2"
+    },
+    {
       "PowerHint": "FP_BOOST",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 500,
