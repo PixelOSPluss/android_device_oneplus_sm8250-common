@@ -142,6 +142,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "DDRBWMinFreq",
+      "Path": "/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq",
+      "Values": [
+        "9999999",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUCtagBackgroundUclampMax",
       "Path": "/dev/cpuctl/background/cpu.uclamp.max",
       "Values": [
@@ -237,6 +246,12 @@
       "Node": "TAUClampBoost",
       "Duration": 1500,
       "Value": "40"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "DDRBWMinFreq",
+      "Duration": 1500,
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
