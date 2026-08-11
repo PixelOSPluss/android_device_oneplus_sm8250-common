@@ -252,7 +252,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 90,
-      "Value": "1171200"
+      "Value": "1075200"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "DDRBWMinFreq",
+      "Duration": 90,
+      "Value": "9999999"
     },
     {
       "PowerHint": "INTERACTION",
