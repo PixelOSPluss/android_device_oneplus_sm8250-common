@@ -160,6 +160,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "SchedutilDownRateLimit",
+      "Path": "/sys/devices/system/cpu/cpufreq/schedutil/down_rate_limit_us",
+      "Values": [
+        "10000",
+        "500"
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUCtagBackgroundUclampMax",
       "Path": "/dev/cpuctl/background/cpu.uclamp.max",
       "Values": [
@@ -237,6 +247,12 @@
       "Node": "L3ClusterMinFreq",
       "Duration": 120,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "SchedutilDownRateLimit",
+      "Duration": 120,
+      "Value": "10000"
     },
     {
       "PowerHint": "LAUNCH",
