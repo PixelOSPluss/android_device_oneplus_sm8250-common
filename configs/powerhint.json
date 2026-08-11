@@ -387,6 +387,18 @@
       "Value": "3"
     },
     {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "TAUClampBoost",
+      "Duration": 0,
+      "Value": "40"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUIdleTimer",
+      "Duration": 0,
+      "Value": "80"
+    },
+    {
       "PowerHint": "ML_ACC",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
