@@ -314,8 +314,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/oplus \
-    hardware/qcom-caf/common/libqti-perfd-client
+    hardware/oplus
 
 # Task profiles & Wifi QPower
 PRODUCT_COPY_FILES += \
