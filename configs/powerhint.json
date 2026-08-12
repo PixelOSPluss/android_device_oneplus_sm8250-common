@@ -115,13 +115,12 @@
       "HoldFd": true
     },
     {
-      "Name": "TAUClampBoost",
-      "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
+      "Name": "TASchedtuneBoost",
+      "Path": "/dev/stune/top-app/schedtune.boost",
       "Values": [
-        "1",
-        "28"
+        "30",
+        "10"
       ],
-      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -195,9 +194,9 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "TAUClampBoost",
+      "Node": "TASchedtuneBoost",
       "Duration": 0,
-      "Value": "28"
+      "Value": "30"
     },
     {
       "PowerHint": "LAUNCH",
@@ -219,9 +218,9 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "TAUClampBoost",
+      "Node": "TASchedtuneBoost",
       "Duration": 5000,
-      "Value": "28"
+      "Value": "30"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
