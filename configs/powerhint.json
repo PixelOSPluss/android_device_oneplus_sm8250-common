@@ -253,7 +253,7 @@
     },
     {
       "Name": "L3ClusterMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq",
+      "Path": "/sys/class/devfreq/18590000.qcom,devfreq-l3:qcom,cpu4-cpu-l3-lat/min_freq",
       "Values": [
         "1651200000",
         "0"
