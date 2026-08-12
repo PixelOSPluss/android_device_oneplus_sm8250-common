@@ -862,26 +862,17 @@ function configure_zram_parameters() {
 }
 
 function configure_read_ahead_kb_values() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    dmpts=$(ls /sys/block/*/queue/read_ahead_kb | grep -e dm -e mmc)
-
-    # Set 128 for <= 3GB &
-    # set 512 for >= 4GB targets.
-    if [ $MemTotal -le 3145728 ]; then
-        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        for dm in $dmpts; do
-            echo 128 > $dm
-        done
-    else
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        for dm in $dmpts; do
-            echo 512 > $dm
-        done
+    dmpts=$(ls /sys/block/*/queue/read_ahead_kb 2>/dev/null | grep -e dm -e mmc -e sd)
+    ra_kb=128
+    if [ -f /sys/block/mmcblk0/bdi/read_ahead_kb ]; then
+        echo $ra_kb > /sys/block/mmcblk0/bdi/read_ahead_kb
     fi
+    if [ -f /sys/block/mmcblk0rpmb/bdi/read_ahead_kb ]; then
+        echo $ra_kb > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+    fi
+    for dm in $dmpts; do
+        echo $ra_kb > $dm 2>/dev/null
+    done
 }
 
 function disable_core_ctl() {
@@ -5704,7 +5695,7 @@ case "$target" in
 	ddr_type5="08"
 
 	# Core control parameters for gold
-	echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
+	echo 0 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
 	echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
 	echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
 	echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
@@ -5738,8 +5729,12 @@ case "$target" in
 	echo 400000000 > /proc/sys/kernel/sched_coloc_downmigrate_ns
 
 	# cpuset parameters
-	echo 0-3 > /dev/cpuset/background/cpus
-	echo 0-3 > /dev/cpuset/system-background/cpus
+	echo 1-2 > /dev/cpuset/audio-app/cpus 2>/dev/null
+	echo 0-2 > /dev/cpuset/background/cpus
+	echo 0-2 > /dev/cpuset/system-background/cpus
+	echo 0-3 > /dev/cpuset/restricted/cpus 2>/dev/null
+	echo 0-6 > /dev/cpuset/foreground/cpus
+	echo 0-7 > /dev/cpuset/top-app/cpus
 
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
@@ -5748,35 +5743,28 @@ case "$target" in
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        if [ $rev == "2.0" ] || [ $rev == "2.1" ]; then
-		echo 1248000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-	else
-		echo 1228800 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-	fi
-	echo 691200 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
+	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
+	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
-	# configure input boost settings
-	echo "0:1324800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
-	echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+	# Disable legacy kernel input boost (PowerHAL AIDL handles touch hints)
+	echo "0:0" > /sys/module/cpu_boost/parameters/input_boost_freq 2>/dev/null
+	echo "0:0" > /sys/devices/system/cpu/cpu_boost/input_boost_freq 2>/dev/null
+	echo 0 > /sys/module/cpu_boost/parameters/input_boost_ms 2>/dev/null
+	echo 0 > /sys/devices/system/cpu/cpu_boost/input_boost_ms 2>/dev/null
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-	echo 1574400 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
-	echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
+	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
+	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 	# configure governor settings for gold+ cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
-        if [ $rev == "2.0" ] || [ $rev == "2.1" ]; then
-		echo 1632000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
-	else
-		echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
-	fi
-	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
+	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
+	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
 	# Enable bus-dcvs
 	for device in /sys/devices/platform/soc
