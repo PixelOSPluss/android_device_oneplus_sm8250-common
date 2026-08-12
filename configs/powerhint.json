@@ -604,7 +604,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "2"
+      "Value": "1"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -616,7 +616,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "TASchedtuneBoost",
       "Duration": 0,
-      "Value": "20"
+      "Value": "30"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
