@@ -5757,7 +5757,7 @@ case "$target" in
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
 	echo 10000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
 	echo 2000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-	echo 1056000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
+	echo 1094400 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
 	echo 80 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_load
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
