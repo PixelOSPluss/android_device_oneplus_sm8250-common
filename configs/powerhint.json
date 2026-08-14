@@ -45,10 +45,8 @@
         "691200",
         "576000",
         "480000",
-        "300000",
-        "0"
+        "300000"
       ],
-      "DefaultIndex": 15,
       "ResetOnInit": true
     },
     {
@@ -105,7 +103,6 @@
         "710400",
         "0"
       ],
-      "DefaultIndex": 16,
       "ResetOnInit": true
     },
     {
@@ -164,136 +161,6 @@
         "844800",
         "0"
       ],
-      "DefaultIndex": 21,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "TASchedtuneBoost",
-      "Path": "/dev/stune/top-app/schedtune.boost",
-      "Values": [
-        "0",
-        "10",
-        "20",
-        "30",
-        "40",
-        "50",
-        "60"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "TASchedtunePreferIdle",
-      "Path": "/dev/stune/top-app/schedtune.prefer_idle",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "FGSchedtuneBoost",
-      "Path": "/dev/stune/foreground/schedtune.boost",
-      "Values": [
-        "0",
-        "30",
-        "50"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "GPUMaxFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/max_pwrlevel",
-      "Values": [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "GPUMinFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/min_pwrlevel",
-      "Values": [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "DefaultIndex": 5,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "GPUIdleTimer",
-      "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
-      "Values": [
-        "5000",
-        "2000",
-        "80",
-        "64"
-      ],
-      "DefaultIndex": 2,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "DDRBWMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq",
-      "Values": [
-        "7980",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "L3ClusterMinFreq",
-      "Path": "/sys/class/devfreq/18590000.qcom,devfreq-l3:qcom,cpu4-cpu-l3-lat/min_freq",
-      "Values": [
-        "1651200000",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "DoubleTapToWakeEnable",
-      "Path": "/proc/touchpanel/double_tap_enable",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "CPUBWHystTriggerCount",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_trigger_count",
-      "Values": [
-        "0",
-        "3"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "CPUBWHystLength",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_length",
-      "Values": [
-        "0",
-        "10"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "CPUBWHistMemory",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hist_memory",
-      "Values": [
-        "0",
-        "20"
-      ],
       "ResetOnInit": true
     },
     {
@@ -304,6 +171,168 @@
         "100"
       ],
       "HoldFd": true
+    },
+    {
+      "Name": "UclampTAMin",
+      "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
+      "Values": [
+        "0",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "UclampTALatency",
+      "Path": "/dev/cpuctl/top-app/cpu.uclamp.latency_sensitive",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "UclampFGMin",
+      "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
+      "Values": [
+        "0",
+        "30",
+        "40",
+        "50"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUMaxFreq",
+      "Path": "/sys/devices/platform/soc/3d00000.qcom,kgsl-3d0/devfreq/3d00000.qcom,kgsl-3d0/max_freq",
+      "Values": [
+        "580000000",
+        "515000000",
+        "439000000",
+        "364000000",
+        "324000000",
+        "285000000",
+        "220000000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUMinFreq",
+      "Path": "/sys/devices/platform/soc/3d00000.qcom,kgsl-3d0/devfreq/3d00000.qcom,kgsl-3d0/min_freq",
+      "Values": [
+        "580000000",
+        "515000000",
+        "439000000",
+        "364000000",
+        "324000000",
+        "285000000",
+        "220000000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUIdleTimer",
+      "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
+      "Values": [
+        "5000",
+        "2000",
+        "500",
+        "80"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBWHystTriggerCount",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/DDR/19091000.qcom,bwmon-ddr/hyst_trigger_count",
+      "Values": [
+        "0",
+        "3"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBWHistMemory",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/DDR/19091000.qcom,bwmon-ddr/hist_memory",
+      "Values": [
+        "0",
+        "20"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBWHystLength",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/DDR/19091000.qcom,bwmon-ddr/hyst_length",
+      "Values": [
+        "0",
+        "10"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBWMinFreq",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/DDR/boost_freq",
+      "Values": [
+        "3196000",
+        "1555000",
+        "547000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "LLCCBWHystTriggerCount",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/190b6400.qcom,bwmon-llcc/hyst_trigger_count",
+      "Values": [
+        "0",
+        "3"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "LLCCBWHistMemory",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/190b6400.qcom,bwmon-llcc/hist_memory",
+      "Values": [
+        "0",
+        "20"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "LLCCBWHystLength",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/190b6400.qcom,bwmon-llcc/hyst_length",
+      "Values": [
+        "0",
+        "10"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "LLCCBWMinFreq",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/LLCC/boost_freq",
+      "Values": [
+        "1066000",
+        "806000",
+        "600000",
+        "300000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "L3MinFreq",
+      "Path": "/sys/devices/system/cpu/bus_dcvs/L3/boost_freq",
+      "Values": [
+        "1708800",
+        "1593600",
+        "1267200",
+        "998400",
+        "518400",
+        "300000"
+      ],
+      "ResetOnInit": true
     },
     {
       "Name": "PowerHALMainState",
@@ -322,6 +351,24 @@
         ""
       ],
       "Type": "Property"
+    },
+    {
+      "Name": "SleepDisabled",
+      "Path": "/sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0
+    },
+    {
+      "Name": "PredictionDisabled",
+      "Path": "/sys/devices/system/cpu/qcom_lpm/parameters/prediction_disabled",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0
     }
   ],
   "Actions": [
@@ -335,25 +382,25 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "2419200"
+      "Value": "2227200"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
-      "Value": "1382400"
+      "Value": "1286400"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
-      "Value": "2841600"
+      "Value": "2553600"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigPlusClusterMinFreq",
       "Duration": 0,
-      "Value": "1516800"
+      "Value": "1632000"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
@@ -371,29 +418,29 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "1"
+      "Value": "439000000"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "3"
+      "Value": "439000000"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
-      "Node": "TASchedtuneBoost",
+      "Node": "UclampTAMin",
       "Duration": 0,
       "Value": "20"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
-      "Node": "TASchedtunePreferIdle",
+      "Node": "UclampTALatency",
       "Duration": 0,
       "Value": "1"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
-      "Node": "FGSchedtuneBoost",
+      "Node": "UclampFGMin",
       "Duration": 0,
       "Value": "30"
     },
@@ -407,37 +454,31 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
-      "Value": "1094400"
+      "Value": "1286400"
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "GPUMinFreq",
-      "Duration": 0,
-      "Value": "3"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "GPUIdleTimer",
-      "Duration": 0,
-      "Value": "2000"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "TASchedtuneBoost",
+      "Node": "UclampTAMin",
       "Duration": 0,
       "Value": "20"
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "FGSchedtuneBoost",
+      "Node": "UclampFGMin",
       "Duration": 0,
       "Value": "30"
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "TASchedtunePreferIdle",
+      "Node": "UclampTALatency",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "L3MinFreq",
+      "Duration": 0,
+      "Value": "1593600"
     },
     {
       "PowerHint": "INTERACTION",
@@ -459,15 +500,45 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "DDRBWMinFreq",
+      "Node": "CPUBWMinFreq",
       "Duration": 0,
-      "Value": "7980"
+      "Value": "1555000"
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "L3ClusterMinFreq",
+      "Node": "LLCCBWHystTriggerCount",
       "Duration": 0,
-      "Value": "1651200000"
+      "Value": "0"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "LLCCBWHystLength",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "LLCCBWHistMemory",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "LLCCBWMinFreq",
+      "Duration": 0,
+      "Value": "600000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "364000000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUIdleTimer",
+      "Duration": 0,
+      "Value": "500"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
@@ -525,21 +596,27 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "TASchedtuneBoost",
-      "Duration": 3000,
+      "Node": "UclampTAMin",
+      "Duration": 2000,
       "Value": "40"
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "TASchedtunePreferIdle",
-      "Duration": 3000,
+      "Node": "UclampFGMin",
+      "Duration": 2000,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "UclampTALatency",
+      "Duration": 2000,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "FGSchedtuneBoost",
-      "Duration": 3000,
-      "Value": "50"
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 800,
+      "Value": "44"
     },
     {
       "PowerHint": "LAUNCH",
@@ -561,33 +638,57 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "DDRBWMinFreq",
+      "Node": "CPUBWMinFreq",
       "Duration": 2000,
-      "Value": "7980"
+      "Value": "1555000"
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "L3ClusterMinFreq",
+      "Node": "LLCCBWHystTriggerCount",
       "Duration": 2000,
-      "Value": "1651200000"
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "LLCCBWHystLength",
+      "Duration": 2000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "LLCCBWHistMemory",
+      "Duration": 2000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "LLCCBWMinFreq",
+      "Duration": 2000,
+      "Value": "1066000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "L3MinFreq",
+      "Duration": 2000,
+      "Value": "1708800"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUMaxFreq",
       "Duration": 2000,
-      "Value": "1"
+      "Value": "515000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUMinFreq",
       "Duration": 2000,
-      "Value": "2"
+      "Value": "364000000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUIdleTimer",
       "Duration": 2000,
-      "Value": "5000"
+      "Value": "2000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -599,7 +700,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "1344000"
+      "Value": "1171200"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -611,13 +712,13 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "0"
+      "Value": "580000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "1"
+      "Value": "439000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -627,15 +728,27 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "TASchedtuneBoost",
+      "Node": "UclampTAMin",
+      "Duration": 0,
+      "Value": "20"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "UclampTALatency",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "UclampFGMin",
       "Duration": 0,
       "Value": "30"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "TASchedtunePreferIdle",
+      "Node": "PMQoSCpuDmaLatency",
       "Duration": 0,
-      "Value": "1"
+      "Value": "44"
     },
     {
       "PowerHint": "Flipendo",
@@ -653,19 +766,13 @@
       "PowerHint": "Flipendo",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
-      "Value": "1632000"
+      "Value": "1516800"
     },
     {
       "PowerHint": "Flipendo",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "4"
-    },
-    {
-      "PowerHint": "DOUBLE_TAP_TO_WAKE",
-      "Node": "DoubleTapToWakeEnable",
-      "Duration": 0,
-      "Value": "1"
+      "Value": "439000000"
     }
   ]
 }
